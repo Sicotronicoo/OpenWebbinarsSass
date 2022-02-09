@@ -1,0 +1,59 @@
+$light-theme:false;
+$dark-theme:true;
+
+header{
+    @if $light-theme == true{
+        background-color: #fff;
+        color:#000;
+    }@else if $dark-theme{
+        background-color: #000;
+        color: #fff;
+    }@else{
+        background-color: #aaa;
+        color:#444;
+    }
+}
+$num: 1;
+$color-list:#0f0,#00f,orange,#ccc;
+
+@while$num < 5{
+    td:nth-child(#{$num}){
+        color:#f00;
+        background-color:nth($color-list, $num);
+    }
+    $num:$num+1;
+}
+@for $i from 1 through 4 {
+    p:nth-of-type(#{$i}){
+        color:#f00;
+        background-color:nth($color-list, $i);
+    }
+}
+$usuarios: pepe,lola,manuel;
+
+@each $u in $usuarios {
+    .profile-#{$u} {
+   background:image-url("img/#{$u}.png") no repeat;
+   }
+}
+
+$mapa:(
+    pepe:"pepe.png",
+    lola:"lola.png",
+    manuel:"manuel.png"
+);
+
+@each $u, $v in $mapa{
+    .perfil-#{$u}{
+        background: image-url("img/#{$v}") no repeat;
+    }
+}
+
+@function anchura-col($cols,$total){
+    @return percentage($cols/$total);
+}
+
+.sidebar{
+    background-color: #00f;
+    width: anchura-col(5,10);
+}

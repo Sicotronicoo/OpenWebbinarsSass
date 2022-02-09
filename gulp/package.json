@@ -1,0 +1,19 @@
+{
+  "name": "grabacion",
+  "version": "1.0.0",
+  "description": "Proyecto Gulp Para el curso",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "curso",
+    "gulp",
+    "openwebinars"
+  ],
+  "author": "Luis Martinez",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
